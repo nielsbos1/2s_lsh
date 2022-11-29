@@ -1,0 +1,57 @@
+\section{Distance functions}
+Items are mapped to a space.  A distance measure on a space is a function $d(x,y)$ that takes two points in the space as arguments and produces a real number. The following conditions apply:
+\begin{enumerate}
+    \item $d(x,y) \geq 0 $ (no negative distances)
+    \item $d(x,y) = 0$ if and only if $x = y$ (distances are always positive, unless it concerns perfectly similar points)
+    \item $(d(x,y) = d(y,x) $ (distance is always symmetric)
+    \item $d(x,y) \leq d(x,z) + d(z,y)$ (triangle inequality)
+    
+\end{enumerate}
+
+Triangle-inequality axiom results in distance always describing the shortest path between two arbitrary points. 
+
+\subsection{Types of distances}
+\subsubsection{Euclidean distance}
+The euclidean distance would be what comes to mind when we normally think of a "distance". 
+\newline
+Definition of \textit{n-dimensional Euclidean space}:
+\begin{center}
+
+Space which consists of points that are vectors of \textit{n} real numbers
+\end{center}
+
+The most commonly-used distance measure is the $L_{2}-norm$:
+\begin{equation}
+d\left(\left[x_{1}, x_{2}, \ldots, x_{n}\right],\left[y_{1}, y_{2}, \ldots, y_{n}\right]\right)=\sqrt{\sum_{i=1}^{n}\left(x_{i}-y_{i}\right)^{2}}
+\end{equation}
+To any inner product space (which in itself is a generalization of the Euclidean space) the Cauchy-Schwarz inequality applies. 
+\begin{equation}
+|\langle\mathbf{u}, \mathbf{v}\rangle| \leq\|\mathbf{u}\|\|\mathbf{v}\|
+\end{equation}
+
+Proof of triangle equality: 
+\begin{equation}
+\begin{aligned}
+\|\mathbf{u}+\mathbf{v}\|^{2} &=\langle\mathbf{u}+\mathbf{v}, \mathbf{u}+\mathbf{v}\rangle \\
+&=\|\mathbf{u}\|^{2}+\langle\mathbf{u}, \mathbf{v}\rangle+\langle\mathbf{v}, \mathbf{u}\rangle+\|\mathbf{v}\|^{2} \quad \text { where }\langle\mathbf{v}, \mathbf{u}\rangle=\overline{\langle\mathbf{u}, \mathbf{v}\rangle} \\
+&=\|\mathbf{u}\|^{2}+2 \operatorname{Re}\langle\mathbf{u}, \mathbf{v}\rangle+\|\mathbf{v}\|^{2} \\
+& \leq\|\mathbf{u}\|^{2}+2|\langle\mathbf{u}, \mathbf{v}\rangle|+\|\mathbf{v}\|^{2} \\
+& \leq\|\mathbf{u}\|^{2}+2\|\mathbf{u}\|\|\mathbf{v}\|+\|\mathbf{v}\|^{2} \\
+&=(\|\mathbf{u}\|+\|\mathbf{v}\|)^{2}
+\end{aligned}
+\end{equation}
+Then, taking square roots, we get 
+
+\begin{equation}
+\|\mathbf{u}+\mathbf{v}\| \leq\|\mathbf{u}\|+\|\mathbf{v}\|
+\end{equation}
+
+The $L_{2}-norm$ can be generalized into the $L_{r}-norm$, which is defined as 
+\begin{equation}
+d\left(\left[x_{1}, x_{2}, \ldots, x_{n}\right],\left[y_{1}, y_{2}, \ldots, y_{n}\right]\right)=\left(\sum_{i=1}^{n}\left|x_{i}-y_{i}\right|^{r}\right)^{1 / r}
+\end{equation}
+The case of $r=2$ refers to the Euclidean distance, while the case of $r=1$ refers to the $Manhattan distance$.
+As r approaches $\infty$, only the dimension with the largest difference matters. Hence, the $L_{\infty}-norm$ is defined as the maximum of $|x_i-y_i|$ over all dimensions $i$
+
+\subsubsection{Jaccard distance}
+The Jaccard distance is defined as $1 - SIM(x,y)$, where $SIM(x,y)$ is defined as the Jaccard similarity between two sets. The Jaccard similarity is the ratio of the intersection and union of sets $x$ and $y$. 

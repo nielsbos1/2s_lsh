@@ -1,0 +1,14 @@
+\chapter{Research Design}
+The main dataset of interest will be the dataset on products from Amazon.com, Newegg.com, BestBuy.com, and TheNerds.net collected by \cite{DamGKNVF16}. This data consists of a list of 1624 products. Each product comes with a product title, model type and a list of attributes in the form of key-value pairs, where the key represents the name of the attribute and the value the specific value. Following the approach put forward by \cite{HartveldKMNPFS18}, we extract model words from the title and the attribute values. Then we create binary vectors, where a $1$ represents the occurence of a model word for a specific product.
+
+We also test our methods on two other e-commerce datasets, which were first used by \cite{KopckeTR10}. In both of these datasets products from two sources are included. The first dataset consists of electronic products from Abt.com (1081 products) and Buy.com (1092 products). The second dataset consists of electronic products from Amazon.com (1363 products) and the Google product search engine (3226). Both of these datasets are structured a bit differently compared to the original dataset. Each entity comes with a name, description, manufacturer, and price. The descriptions are mostly made up of a list of attributes, so it should still be possible to extract a selection of model words from most of these products. The advantage of including these datasets in our research is that we can compare the results to other algorithms applied to these datasets in related research.
+
+We will implement the following methods in our research:
+\begin{itemize}
+\item Standard minhash
+\item Densified one permutation hashing
+\item Fast similarity sketching
+\item Random projections
+\end{itemize}
+Each of these methods is implemented in the Python programming language. We evaluate the performance of the methods by a bootstrap evaluation. This means that we do multiple runs, where in each run only a subset of the data will be used. By averaging the results over the different runs, we obtain a stable estimate of the performance of the methods. As mentioned in earlier chapters, there are three main metrics of performance, the PC, PQ and FOC. By varying the value of parameters $l$ and $k$ (see equation \ref{eq:prob_collision}), we can influence the chance of entities being hashed to the same bucket. By experimenting with different options, we can find an optimal balance between the PC, PQ and FOC. \newline
+Lastly we  experiment with the constructions of amplified LSH families, as explained in section \ref{lit:amplifying}. 

@@ -1,0 +1,82 @@
+%% ----------------------------------------------------------------
+%% master_thesis.tex
+%%
+%% Bachelor thesis of Niels Bos, style based on ECSDocs
+%% ----------------------------------------------------------------
+
+\documentclass{master_thesis.style}		% Use the Thesis Style
+\graphicspath{{figures/}}			% Location of graphics files
+\hypersetup{colorlinks=true}			% Set to false for black/white printing
+%\input{Definitions}						% Include your abbreviations
+
+% Force hyphenation points for these words:
+% \hyphenation{SimilarityFlooding}
+% \hyphenation{Anchor-PROMPT}
+%  tax\-on\-o\-my/sche\-ma matching
+\usepackage{natbib}
+\def\grafflescal{0.8}
+
+\usepackage{color}
+\usepackage{subfiles}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%% ----------------------------------------------------------------
+\usepackage{acronym}
+
+
+
+\begin{document}
+\frontmatter
+%\title{On the implementation and optimization of amplification of locality-sensitive-hashing functions applied to product deduplication}
+\title{Optimizing the application of locality-sensitive hashing functions in web shop product deduplication}
+\authors{Niels Bos}
+\addresses{\groupname\\\deptname\\\univname}
+\date{\today}
+\subject{Locality-sensitive hashing}
+\keywords{keyword_1, keyword_2}
+\logo{eur-logo}{1.75in}
+\subtitle {no subtitle}
+% \include{digital-version}
+
+\maketitle
+
+\subfile{tex/abstract.tex}
+
+% \dedicatory{To my dear\dots}
+\tableofcontents
+\listoffigures
+\listoftables
+
+% acronyms and abbrevations
+
+\subfile{tex/acronyms.tex}
+\subfile{tex/glossary_of_variables.tex}
+
+% \printacronyms
+% \lstlistoflistings
+% \listofsymbols{ll}{$w$ & The weight vector}
+
+%% ----------------------------------------------------------------
+\mainmatter
+\subfile{tex/introduction.tex}
+%\subfile{tex/problem_description.tex}
+%\subfile{tex/methodology.tex}
+\subfile{tex/literature_review.tex}
+\subfile{tex/data.tex}
+\subfile{tex/methodology.tex}
+\subfile{tex/results.tex}
+\subfile{tex/conclusion_discussion.tex}
+%\subfile{tex/research_design.tex}
+%\subfile{tex/definitions.tex}
+%% ----------------------------------------------------------------
+
+\backmatter
+\typeout{}
+\bibliography{master_thesis}
+\bibliographystyle{apalike}
+
+%%\appendix
+\subfile{tex/Appendix}
+\end{document}
+
+%% ----------------------------------------------------------------

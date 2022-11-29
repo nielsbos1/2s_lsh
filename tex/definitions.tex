@@ -1,0 +1,22 @@
+\chapter{Definitions}\label{chap:definitions}
+\subsection{Hamming space}
+A Hamming space is a set of vectors in which the elements can only take the value 0 or 1. The vectors can also be represented as binary strengs with length $N$. 
+
+\subsection{Hamming distance}
+The Hamming distance between two strings refers to the number of places where the two strings are different. In other word, by changing the elements in those places in one string  to the respective elements on the same place in the other string, the strings would become the same.
+
+\subsection{Sublinear time algorithm}
+An algorithm that can give some sort of answers after only inspecting a very small portion of the input. According to \cite{KulisGrauman12}, LSH applied to the nearest-neighbours problem is a sublinear time algorithm. (Where is the original result showing this?)
+
+\subsection{Locality Sensitive Hashing}
+A family $F$ is called $(d_0, d_1, p_0, p_1)$-sensitive of for any $x, y \in \mathbb{R}^d$ and $f$ chosen uniformly from $F$ satisifies the following properties:
+\begin{itemize}
+    \item if $\operatorname{sim}(x, y) \geq d_0$ then $\operatorname{Pr_F}(h(x)=h(y)) \geq p_0$
+    \item if $\operatorname{sim}(x, y) \leq d_1$ then $\operatorname{Pr_F}(h(x)=h(y)) \leq p_1$
+    
+\end{itemize}
+
+\subsection{The approximate nearest neighbors problem}
+The approximate nearest neigbors problem is defined as follows: Given a query point $q$, search for a point $p \in P$ that is an $\epsilon$-approximate nearest neighbor of $q$, which implies that for all $p^{'} \in P, d(p,q) \leq (1 + \epsilon)d(p^{'},q)$
+
+\subfile{distance_functions}
